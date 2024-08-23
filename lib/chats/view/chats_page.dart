@@ -65,7 +65,7 @@ class ChatsAppBar extends StatelessWidget {
         style: context.titleLarge?.copyWith(fontWeight: AppFontWeight.bold),
       ),
       actions: [
-        Tappable(
+        Tappable.faded(
           onTap: () async {
             void createChat(String participantId) =>
                 context.read<ChatsBloc>().add(
@@ -141,14 +141,13 @@ class ChatsEmpty extends StatelessWidget {
                     extra: true,
                   ) as String?;
                   if (participantId == null) return;
-                  await Future(
-                    () => context.read<ChatsBloc>().add(
-                          ChatsCreateChatRequested(
-                            userId: user.id,
-                            participantId: participantId,
-                          ),
+                  void createChat() => context.read<ChatsBloc>().add(
+                        ChatsCreateChatRequested(
+                          userId: user.id,
+                          participantId: participantId,
                         ),
-                  );
+                      );
+                  createChat();
                 },
               ),
             ].spacerBetween(height: AppSpacing.sm),

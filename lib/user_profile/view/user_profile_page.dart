@@ -344,7 +344,7 @@ class UserProfileActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tappable(
+    return Tappable.faded(
       onTap: () {},
       child: Icon(Icons.adaptive.more_outlined, size: AppSize.iconSize),
     );
@@ -356,7 +356,7 @@ class UserProfileSettingsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tappable(
+    return Tappable.faded(
       onTap: () => context.showListOptionsModal(
         options: [
           ModalOption(child: const LocaleModalOption()),
@@ -365,7 +365,8 @@ class UserProfileSettingsButton extends StatelessWidget {
         ],
       ).then((option) {
         if (option == null) return;
-        option.onTap(context);
+        void onTap() => option.onTap(context);
+        onTap.call();
       }),
       child: Assets.icons.setting.svg(
         height: AppSize.iconSize,
@@ -384,8 +385,7 @@ class LogoutModalOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tappable(
-      animationEffect: TappableAnimationEffect.none,
+    return Tappable.faded(
       onTap: () => context.confirmAction(
         fn: () {
           context.pop();
@@ -417,7 +417,7 @@ class UserProfileAddMediaButton extends StatelessWidget {
     final enableStory =
         context.select((CreateStoriesBloc bloc) => bloc.state.isAvailable);
 
-    return Tappable(
+    return Tappable.faded(
       onTap: () => context
           .showListOptionsModal(
         title: l10n.createText,
@@ -461,7 +461,8 @@ class UserProfileAddMediaButton extends StatelessWidget {
       )
           .then((option) {
         if (option == null) return;
-        option.onTap(context);
+        void onTap() => option.onTap(context);
+        onTap.call();
       }),
       child: const Icon(
         Icons.add_box_outlined,

@@ -15,7 +15,7 @@
 
 [![Github-repository-preview.png](https://i.postimg.cc/52v6WG4V/Github-repository-preview.png)](https://youtu.be/xr56AjdGf-o)
 
-Most people always wanted to see a Flutter project, that will cover all-in-one: sleek UI with blazingly-fast backend. And, try to imagine, without a Firebase as a primary service…
+Most people always wanted to see a Flutter project that is not just a clone but a real-world app with a real-world architecture, that will cover all-in-one: sleek UI with blazingly-fast backend. And, try to imagine, without a Firebase as a primary service…
 
 I present for you Flutter **offline-first** Instagram clone, leveraging Flutter best practices!
 
@@ -74,11 +74,12 @@ And you can watch my blog on medium.
 
  ## ☕️ Support
 
-Also, I would really appreciate any of your support! You can buy me a coffee and become a part of our beautiful community on my [Ko-fi](https://ko-fi.com/emilzulufov).
+Also, I would really appreciate any of your support! You can buy me a coffee and become a part of our beautiful community.
 
 Your donation will hugely help me and it will allow me to keep the next beautiful videos and tutorials high-quality and free!
 
 - [Ko-fi](https://kofi.com/emilzulufov)
+- [PayPal](https://paypal.me/emilzulufov)
 
 
 [coverage_badge]: coverage_badge.svg

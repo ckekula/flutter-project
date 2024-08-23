@@ -348,16 +348,17 @@ class AppSnackbarState extends State<AppSnackbar>
                       ),
                     ],
                   ),
-                  child: Tappable(
+                  child: Tappable.faded(
                     onTap: () {
                       if (currentMessage?.onTap != null) {
                         currentMessage?.onTap!.call();
                       }
                       animateOut();
                     },
-                    borderRadius: 13,
+                    borderRadius: BorderRadius.circular(13),
                     // color: context.theme.colorScheme.secondaryContainer,
-                    color: currentMessage?.backgroundColor ?? AppColors.blue,
+                    backgroundColor:
+                        currentMessage?.backgroundColor ?? AppColors.blue,
                     // color: appStateSettings['materialYou']
                     //     ? dynamicPastel(
                     //         context,
@@ -428,9 +429,7 @@ class AppSnackbarState extends State<AppSnackbar>
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 3,
                                     ),
-                                    if (currentMessage?.description == null)
-                                      const SizedBox.shrink()
-                                    else
+                                    if (currentMessage?.description != null)
                                       Text(
                                         currentMessage?.description ?? '',
                                         style: context.titleSmall,
