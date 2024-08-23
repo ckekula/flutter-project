@@ -40,6 +40,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 Future<void> bootstrap(
   AppBuilder builder, {
+  required FirebaseOptions options,
   required AppFlavor appFlavor,
 }) async {
   FlutterError.onError = (details) {
@@ -52,7 +53,7 @@ Future<void> bootstrap(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
 
-      await Firebase.initializeApp();
+      await Firebase.initializeApp(options: options);
 
       HydratedBloc.storage = await HydratedStorage.build(
         storageDirectory: kIsWeb
